@@ -1,0 +1,602 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devita Azka Tsaniya - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            light: '#1a365d',
+                            DEFAULT: '#0f2a4a',
+                            dark: '#0a1f35'
+                        },
+                        accent: {
+                            light: '#63b3ed',
+                            DEFAULT: '#3182ce',
+                            dark: '#2c5282'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(135deg, #0f2a4a 0%, #1a365d 100%);
+        }
+        
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3182ce;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.left-\[-8px\]{left:-8px}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-16{height:4rem}.h-4{height:1rem}.h-40{height:10rem}.h-64{height:16rem}.w-10{width:2.5rem}.w-12{width:3rem}.w-4{width:1rem}.w-40{width:10rem}.w-64{width:16rem}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-lg{max-width:32rem}.translate-y-1{--tw-translate-y:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-t-\[50\%\]{border-top-left-radius:50%;border-top-right-radius:50%}.border{border-width:1px}.border-2{border-width:2px}.border-4{border-width:4px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-accent-light{--tw-border-opacity:1;border-color:rgb(99 179 237 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-navy{--tw-border-opacity:1;border-color:rgb(15 42 74 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-accent{--tw-bg-opacity:1;background-color:rgb(49 130 206 / var(--tw-bg-opacity, 1))}.bg-accent-light\/20{background-color:rgb(99 179 237 / 0.2)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-navy{--tw-bg-opacity:1;background-color:rgb(15 42 74 / var(--tw-bg-opacity, 1))}.bg-navy-dark{--tw-bg-opacity:1;background-color:rgb(10 31 53 / var(--tw-bg-opacity, 1))}.bg-transparent{background-color:transparent}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-12{padding-bottom:3rem}.pb-4{padding-bottom:1rem}.pl-4{padding-left:1rem}.pl-8{padding-left:2rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-sans{font-family:Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-accent{--tw-text-opacity:1;color:rgb(49 130 206 / var(--tw-text-opacity, 1))}.text-accent-dark{--tw-text-opacity:1;color:rgb(44 82 130 / var(--tw-text-opacity, 1))}.text-accent-light{--tw-text-opacity:1;color:rgb(99 179 237 / var(--tw-text-opacity, 1))}.text-gray-200{--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-navy{--tw-text-opacity:1;color:rgb(15 42 74 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-accent-dark:hover{--tw-bg-opacity:1;background-color:rgb(44 82 130 / var(--tw-bg-opacity, 1))}.hover\:bg-accent-light:hover{--tw-bg-opacity:1;background-color:rgb(99 179 237 / var(--tw-bg-opacity, 1))}.hover\:bg-navy-dark:hover{--tw-bg-opacity:1;background-color:rgb(10 31 53 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:text-accent-light:hover{--tw-text-opacity:1;color:rgb(99 179 237 / var(--tw-text-opacity, 1))}.hover\:text-navy-dark:hover{--tw-text-opacity:1;color:rgb(10 31 53 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-accent:focus{--tw-border-opacity:1;border-color:rgb(49 130 206 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-accent:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(49 130 206 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:w-1\/2{width:50%}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:py-28{padding-top:7rem;padding-bottom:7rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}</style></head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-navy sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-white font-bold text-xl">Devita Azka Tsaniya</a>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-white hover:text-accent-light transition">About</a>
+                    <a href="#skills" class="nav-link text-white hover:text-accent-light transition">Skills</a>
+                    <a href="#experience" class="nav-link text-white hover:text-accent-light transition">Experience</a>
+                    <a href="#education" class="nav-link text-white hover:text-accent-light transition">Education</a>
+                    <a href="#contact" class="nav-link text-white hover:text-accent-light transition">Contact</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#about" class="text-white hover:text-accent-light transition">About</a>
+                    <a href="#skills" class="text-white hover:text-accent-light transition">Skills</a>
+                    <a href="#experience" class="text-white hover:text-accent-light transition">Experience</a>
+                    <a href="#education" class="text-white hover:text-accent-light transition">Education</a>
+                    <a href="#contact" class="text-white hover:text-accent-light transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient text-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8 py-20 md:py-28">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Devita Azka Tsaniya</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-accent-light">Full Stack Developer with Backend Expertise</h2>
+                    <p class="text-lg mb-8 text-gray-200 max-w-lg">Based in Tangerang, Indonesia. Available for remote positions worldwide.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-accent hover:bg-accent-dark text-white font-medium py-3 px-6 rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Get in Touch
+                        </a>
+                        <a href="#skills" class="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-lg transition hover:bg-white hover:text-navy-dark">
+                            View My Skills
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-64 h-64 rounded-full bg-accent-light/20 border-4 border-accent-light flex items-center justify-center">
+                        <svg class="w-40 h-40 text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white w-full h-16 rounded-t-[50%] transform translate-y-1"></div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-navy">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg leading-relaxed mb-6">
+                    Highly motivated and experienced full stack developer with a strong focus on backend development. Proficient in Python and passionate about delivering scalable, efficient, and reliable software solutions.
+                </p>
+                <p class="text-lg leading-relaxed mb-6">
+                    With expertise in backend technologies, I excel in designing and implementing robust APIs, microservices, and data-driven applications. I'm excited to leverage my skills and experience in a remote capacity, collaborating with global teams to drive innovation and growth.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-8">
+                    <div class="flex items-center bg-gray-100 px-4 py-2 rounded-lg">
+                        <i class="fas fa-map-marker-alt text-accent mr-2"></i>
+                        <span>Tangerang, Indonesia</span>
+                    </div>
+                    <div class="flex items-center bg-gray-100 px-4 py-2 rounded-lg">
+                        <i class="fas fa-globe text-accent mr-2"></i>
+                        <span>Remote Work Available</span>
+                    </div>
+                    <div class="flex items-center bg-gray-100 px-4 py-2 rounded-lg">
+                        <i class="fas fa-language text-accent mr-2"></i>
+                        <span>English &amp; Indonesian</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-navy">Technical Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">Programming Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Python (primary)</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">HTML/CSS</span>
+                    </div>
+                </div>
+                
+                <!-- Backend Frameworks -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">Backend Frameworks</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Django</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Flask</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">FastAPI</span>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-database text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">Databases</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">PostgreSQL</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">MySQL</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- API Design -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-plug text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">API Design</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">RESTful APIs</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">API Security</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">API Documentation</span>
+                    </div>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code-branch text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">Version Control</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Git</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">GitHub</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">GitLab</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Bitbucket</span>
+                    </div>
+                </div>
+                
+                <!-- Cloud Platforms -->
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cloud text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-navy">Cloud Platforms</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">AWS</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Google Cloud</span>
+                        <span class="skill-pill bg-accent-light/20 text-accent-dark px-3 py-1 rounded-full">Azure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-navy">Experience</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="relative pl-8 pb-12 border-l-2 border-navy">
+                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-accent"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold text-navy">Backend Developer</h3>
+                        <p class="text-gray-600 italic">Previous Company/Project Name</p>
+                    </div>
+                    <p class="text-gray-500 mb-4">Employment Dates</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Designed and implemented scalable backend solutions using Python and specific frameworks/technologies</li>
+                        <li>Collaborated with cross-functional teams to deliver high-quality software products</li>
+                        <li>Optimized database performance, API latency, and overall system efficiency</li>
+                    </ul>
+                </div>
+                
+                <div class="relative pl-8 pb-12 border-l-2 border-navy">
+                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-accent"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold text-navy">Full Stack Developer</h3>
+                        <p class="text-gray-600 italic">Previous Company/Project Name</p>
+                    </div>
+                    <p class="text-gray-500 mb-4">Employment Dates</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Developed and maintained full stack applications with a focus on backend functionality</li>
+                        <li>Implemented RESTful APIs and integrated with frontend components</li>
+                        <li>Participated in code reviews and mentored junior developers</li>
+                    </ul>
+                </div>
+                
+                <div class="relative pl-8">
+                    <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-accent"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold text-navy">Software Engineer Intern</h3>
+                        <p class="text-gray-600 italic">Previous Company/Project Name</p>
+                    </div>
+                    <p class="text-gray-500 mb-4">Employment Dates</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Assisted in developing and testing backend components</li>
+                        <li>Gained hands-on experience with Python frameworks and database management</li>
+                        <li>Contributed to documentation and process improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-navy">Education &amp; Certifications</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Education -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-navy flex items-center">
+                        <i class="fas fa-graduation-cap mr-3 text-accent"></i>
+                        Education
+                    </h3>
+                    <div class="border-l-2 border-accent-light pl-4">
+                        <h4 class="font-medium text-lg">Degree, Field of Study</h4>
+                        <p class="text-gray-600">University Name</p>
+                        <p class="text-gray-500 mt-1">Graduation Date</p>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-navy flex items-center">
+                        <i class="fas fa-certificate mr-3 text-accent"></i>
+                        Certifications
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span>Python Certification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span>AWS Certified Developer</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            <span>Database Management Certification</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I'm Looking For Section -->
+    <section class="py-16 bg-gradient text-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-8 text-center">What I'm Looking For</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-lg hover:bg-white/20 transition">
+                    <div class="text-accent-light text-3xl mb-3">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Remote Positions</h3>
+                    <p class="text-gray-200">Remote full stack or backend developer positions worldwide</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-lg hover:bg-white/20 transition">
+                    <div class="text-accent-light text-3xl mb-3">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Global Teams</h3>
+                    <p class="text-gray-200">Opportunities to work with global teams on innovative projects</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-lg hover:bg-white/20 transition">
+                    <div class="text-accent-light text-3xl mb-3">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Collaborative Environment</h3>
+                    <p class="text-gray-200">Dynamic and collaborative work environment</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-5 rounded-lg hover:bg-white/20 transition">
+                    <div class="text-accent-light text-3xl mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Growth Opportunities</h3>
+                    <p class="text-gray-200">Continuous learning and professional growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-navy">Let's Connect!</h2>
+            
+            <div class="max-w-3xl mx-auto bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-navy p-8 text-white">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                                    <i class="fas fa-envelope text-accent-light"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">Email</p>
+                                    <p>your.email@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                                    <i class="fas fa-phone text-accent-light"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">Phone</p>
+                                    <p>+62 123 456 7890</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3">
+                                    <i class="fas fa-map-marker-alt text-accent-light"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-300">Location</p>
+                                    <p>Tangerang, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium mb-4">Connect with me</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/devita-azka-tsaniya" target="_blank" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-accent-light transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-accent-light transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-accent-light transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-navy">Send Me a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required="">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required="">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" required=""></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-navy hover:bg-navy-dark text-white font-medium py-2 px-4 rounded-lg transition shadow-md hover:shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-white py-8">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold">Devita Azka Tsaniya</h3>
+                    <p class="text-gray-400">Full Stack Developer with Backend Expertise</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-gray-400">
+                <p>© 2023 Devita Azka Tsaniya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For this demo, we'll just show a success message
+            formMessage.textContent = "Thank you for your message! I'll get back to you soon.";
+            formMessage.classList.remove('hidden', 'text-red-500');
+            formMessage.classList.add('text-green-600');
+            
+            // Reset the form
+            contactForm.reset();
+            
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Active navigation link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'959d514326385844',t:'MTc1MTYxODQyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+</body></html>
